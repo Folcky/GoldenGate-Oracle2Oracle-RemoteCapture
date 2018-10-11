@@ -12,9 +12,9 @@ Oracle DB Source (without GG services) -> Oracle GoldenGate -> Oracle DB Target 
 * sath89/oracle-12c
 
 ## Docker consoles for Terminal
-* docker exec -it GG-datasource bash  
-* docker exec -it GG-goldengate bash  
-* docker exec -it GG-datatarget bash
+> docker exec -it GG-datasource bash  
+> docker exec -it GG-goldengate bash  
+> docker exec -it GG-datatarget bash
 
 # 1. Oracle DB Source Init
 
@@ -27,8 +27,10 @@ Oracle DB Source (without GG services) -> Oracle GoldenGate -> Oracle DB Target 
 ## Credentials
 
 ### OGG user
-> CREATE USER gg_extract IDENTIFIED BY gg_extract;  
-> GRANT CREATE SESSION, CONNECT, RESOURCE, ALTER ANY TABLE, ALTER SYSTEM, DBA, SELECT ANY TRANSACTION TO gg_extract;
+```sql
+CREATE USER gg_extract IDENTIFIED BY gg_extract;  
+GRANT CREATE SESSION, CONNECT, RESOURCE, ALTER ANY TABLE, ALTER SYSTEM, DBA, SELECT ANY TRANSACTION TO gg_extract;
+```
 
 ### Transaction user
 > CREATE USER trans_user IDENTIFIED BY trans_user;  
