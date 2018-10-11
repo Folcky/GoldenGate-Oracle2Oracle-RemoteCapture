@@ -93,13 +93,13 @@ CREATE TABLE trans_user.test (
 > su oracle 
 
 ### Run GGSCI:
-> *GGSCI (a3abfded7bc7) 2>* add credentialstore  
-Credential store created.  
->  GGSCI (a3abfded7bc7) 3> alter credentialstore add user gg_extract@datasource:1521/xe password gg_extract alias oggadmin  
+> **GGSCI (a3abfded7bc7) 2>** add credentialstore  
+Credential store created.
+>  **GGSCI (a3abfded7bc7) 2>** alter credentialstore add user gg_extract@datasource:1521/xe password gg_extract alias oggadmin  
 Credential store altered.  
-> GGSCI (a3abfded7bc7) 3> alter credentialstore add user gg_replicat@datatarget:1521/xe password gg_replicat alias oggrepl  
+> **GGSCI (a3abfded7bc7) 2>** alter credentialstore add user gg_replicat@datatarget:1521/xe password gg_replicat alias oggrepl  
 Credential store altered.  
-> GGSCI (a3abfded7bc7) 4> info credentialstore  
+> **GGSCI (a3abfded7bc7) 2>** info credentialstore  
 Reading from credential store:  
 Default domain: OracleGoldenGate  
   Alias: oggadmin  
@@ -111,15 +111,15 @@ Default domain: OracleGoldenGate
 > su oracle  
 
 ### Run GGSCI and change source schema configuration:
-> GGSCI (a3abfded7bc7) 5> dblogin useridalias oggadmin  
+> **GGSCI (a3abfded7bc7) 2>** dblogin useridalias oggadmin  
 Successfully logged into database.  
-> GGSCI (3ccaa10ab29a as gg_extract@xe) 88> add schematrandata trans_user ALLCOLS  
+> **GGSCI (a3abfded7bc7) 2>** add schematrandata trans_user ALLCOLS  
 2018-10-09 10:48:56  INFO    OGG-01788  SCHEMATRANDATA has been added on schema "trans_user".  
 
 ### Run GGSCI and add checkpoint table:
-> GGSCI (a3abfded7bc7) 5> dblogin useridalias oggrepl  
+> **GGSCI (a3abfded7bc7) 2>** dblogin useridalias oggrepl  
 Successfully logged into database.  
-> GGSCI (74ef4e8a226e as gg_replicat@xe) 39> ADD CHECKPOINTTABLE gg_replicat.oggchkpt  
+> **GGSCI (a3abfded7bc7) 2>** ADD CHECKPOINTTABLE gg_replicat.oggchkpt  
 Successfully created checkpoint table gg_replicat.oggchkpt.  
 
 
@@ -132,7 +132,7 @@ Successfully created checkpoint table gg_replicat.oggchkpt.
 > su oracle  
 
 ### Run GGSCI and edit extract params file(e.g. VIM will be runned):
-> GGSCI (a3abfded7bc7) 2> edit params getExt  
+> **GGSCI (a3abfded7bc7) 2>** edit params getExt  
 ```
 EXTRACT getExt
 USERIDALIAS oggadmin
@@ -144,15 +144,15 @@ TABLE trans_user.test;
 ```
 
 ### Run GGSCI and register&start extract params file:
-> GGSCI (a3abfded7bc7) 5> ADD EXTRACT getExt, TRANLOG, BEGIN NOW  
-> GGSCI (a3abfded7bc7) 5> ADD EXTTRAIL ./dirdat/in, EXTRACT getext  
-> GGSCI (a3abfded7bc7) 5> START EXTRACT getExt  
-> GGSCI (a3abfded7bc7) 5> info extract getext, detail  
+> **GGSCI (a3abfded7bc7) 2>** ADD EXTRACT getExt, TRANLOG, BEGIN NOW  
+> **GGSCI (a3abfded7bc7) 2>** ADD EXTTRAIL ./dirdat/in, EXTRACT getext  
+> **GGSCI (a3abfded7bc7) 2>** START EXTRACT getExt  
+> **GGSCI (a3abfded7bc7) 2>** info extract getext, detail  
 
 ## Replicat configuration
 
 ### Run GGSCI and edit replicat params file(e.g. VIM will be runned):
-> GGSCI (a3abfded7bc7) 2> edit params putExt  
+> **GGSCI (a3abfded7bc7) 2>** edit params putExt  
 ```
 REPLICAT putext
 INSERTALLRECORDS
@@ -171,8 +171,8 @@ COLMAP (
 ```
 
 ### Run GGSCI and register&start replicat params file:
-> GGSCI (a3abfded7bc7) 2> ADD REPLICAT putExt, EXTTRAIL ./dirdat/in, BEGIN NOW, CHECKPOINTTABLE gg_replicat.oggchkpt  
-> GGSCI (a3abfded7bc7) 2> START REPLICAT putExt  
+> **GGSCI (a3abfded7bc7) 2>** ADD REPLICAT putExt, EXTTRAIL ./dirdat/in, BEGIN NOW, CHECKPOINTTABLE gg_replicat.oggchkpt  
+> **GGSCI (a3abfded7bc7) 2>** START REPLICAT putExt  
 
 # 4. Oracle GoldenGate - Emulate replication
 
