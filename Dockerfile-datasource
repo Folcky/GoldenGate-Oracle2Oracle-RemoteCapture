@@ -1,0 +1,6 @@
+FROM sath89/oracle-12c
+
+
+RUN mkdir /u01/app/oracle/cfgtoollogs
+RUN mkdir /u01/app/oracle/cfgtoollogs/dbca
+RUN chmod -R a+rw /u01/app/oracle

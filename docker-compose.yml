@@ -1,0 +1,36 @@
+version: '2'
+services:
+  datasource:
+    container_name: GG-datasource
+    volumes:
+      - /home/builder/Documents/GG/source_data/:/u01/app/oracle
+    ports:
+      - "1521:1521"
+    restart: unless-stopped
+    build:
+      context: . 
+      dockerfile: Dockerfile-datasource
+    networks:
+      - gg_net
+  datatarget:
+    container_name: GG-datatarget
+    volumes:
+      - /home/builder/Documents/GG/target_data/:/u01/app/oracle
+    ports:
+      - "1522:1521"
+    restart: unless-stopped
+    build:
+      context: . 
+      dockerfile: Dockerfile-datatarget
+    networks:
+      - gg_net
+  gg:
+    container_name: GG-goldengate
+    image: oracle/goldengate-standard:12.3.0.1.4
+    volumes:
+      - /home/builder/Documents/GG/gg_data/:/shared
+    networks:
+      - gg_net
+networks:
+  gg_net:
+    driver: bridge
