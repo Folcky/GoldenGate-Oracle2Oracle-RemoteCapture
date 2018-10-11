@@ -4,9 +4,8 @@ Oracle DB Source (without GG services) -> Oracle GoldenGate -> Oracle DB Target 
 # 0. Prerequisites
 
 ## DB credentials
-sqlplus system/oracle@datasource:1521/xe
-
-sqlplus system/oracle@datatarget:1521/xe
+> sqlplus system/oracle@datasource:1521/xe
+> sqlplus system/oracle@datatarget:1521/xe
 
 ## Used Docker images
 oracle/goldengate-standard:12.3.0.1.4 (Read here https://github.com/oracle/docker-images/tree/master/OracleGoldenGate)
