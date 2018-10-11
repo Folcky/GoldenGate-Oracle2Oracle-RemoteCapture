@@ -94,7 +94,7 @@ CREATE TABLE trans_user.test (
 
 ### Run GGSCI:
 > **GGSCI (a3abfded7bc7) 2>** add credentialstore  
-Credential store created.
+Credential store created.  
 >  **GGSCI (a3abfded7bc7) 2>** alter credentialstore add user gg_extract@datasource:1521/xe password gg_extract alias oggadmin  
 Credential store altered.  
 > **GGSCI (a3abfded7bc7) 2>** alter credentialstore add user gg_replicat@datatarget:1521/xe password gg_replicat alias oggrepl  
