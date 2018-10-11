@@ -5,6 +5,7 @@ Oracle DB Source (without GG services) -> Oracle GoldenGate -> Oracle DB Target 
 
 ## DB credentials
 sqlplus system/oracle@datasource:1521/xe
+
 sqlplus system/oracle@datatarget:1521/xe
 
 ## Used Docker images
