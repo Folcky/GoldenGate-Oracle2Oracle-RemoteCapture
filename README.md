@@ -93,7 +93,7 @@ CREATE TABLE trans_user.test (
 > su oracle 
 
 ### Run GGSCI:
-> GGSCI (a3abfded7bc7) 2> add credentialstore  
+> *GGSCI (a3abfded7bc7) 2>* add credentialstore  
 Credential store created.  
 >  GGSCI (a3abfded7bc7) 3> alter credentialstore add user gg_extract@datasource:1521/xe password gg_extract alias oggadmin  
 Credential store altered.  
