@@ -5,24 +5,30 @@ Oracle DB Source (without GG services) -> Oracle GoldenGate -> Oracle DB Target 
 
 ## DB credentials
 > sqlplus system/oracle@datasource:1521/xe
+
 > sqlplus system/oracle@datatarget:1521/xe
 
 ## Used Docker images
-oracle/goldengate-standard:12.3.0.1.4 (Read here https://github.com/oracle/docker-images/tree/master/OracleGoldenGate)
-sath89/oracle-12c
+* oracle/goldengate-standard:12.3.0.1.4 (Read here https://github.com/oracle/docker-images/tree/master/OracleGoldenGate)
+* sath89/oracle-12c
 
 ## Docker consoles for Terminal
-docker exec -it GG-datasource bash
-docker exec -it GG-goldengate bash
-docker exec -it GG-datatarget bash
+* docker exec -it GG-datasource bash
+
+* docker exec -it GG-goldengate bash
+
+* docker exec -it GG-datatarget bash
 
 # 1. Oracle DB Source Init
 
 ## Database params
-alter system set enable_goldengate_replication=TRUE;
-alter database add supplemental log data;
-alter database force logging;
-alter system switch logfile;
+> alter system set enable_goldengate_replication=TRUE;
+
+> alter database add supplemental log data;
+
+> alter database force logging;
+
+> alter system switch logfile;
 
 ## Credentials
 
