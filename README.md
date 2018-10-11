@@ -36,11 +36,14 @@ Oracle DB Source (without GG services) -> Oracle GoldenGate -> Oracle DB Target 
 > ALTER USER trans_user QUOTA UNLIMITED ON USERS;
 
 ## Data source objects
-> CREATE TABLE trans_user.test (  
->          empno      NUMBER(5) PRIMARY KEY,  
->          ename      VARCHAR2(15) NOT NULL);  
+```sql
+CREATE TABLE trans_user.test (  
+         empno      NUMBER(5) PRIMARY KEY,  
+         ename      VARCHAR2(15) NOT NULL);  
 
-> COMMENT ON TABLE test IS 'Testing GoldenGate';
+
+ COMMENT ON TABLE test IS 'Testing GoldenGate';
+```
 
 # 2. Oracle DB Target Init
 
