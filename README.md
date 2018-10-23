@@ -1,6 +1,8 @@
 # GoldenGate-Oracle2Oracle-RemoteCapture
 Oracle DB Source (without GG services) -> Oracle GoldenGate -> Oracle DB Target (without GG services)
 
+![Alt text](Folcky/GoldenGate-Oracle2Oracle-RemoteCapture/blob/master/Untitled%20Diagram.png?raw=true "Diagram")  
+
 # 0. Prerequisites
 
 ## DB credentials
