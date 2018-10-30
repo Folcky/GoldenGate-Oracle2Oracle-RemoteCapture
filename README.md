@@ -102,13 +102,13 @@ user@bash:~$ su oracle
 
 ### Run GGSCI:
 ```console
-**GGSCI (a3abfded7bc7) 2>** add credentialstore  
+GGSCI (a3abfded7bc7) 2> add credentialstore  
 Credential store created.  
-**GGSCI (a3abfded7bc7) 2>** alter credentialstore add user gg_extract@datasource:1521/xe password gg_extract alias oggadmin  
+GGSCI (a3abfded7bc7) 2> alter credentialstore add user gg_extract@datasource:1521/xe password gg_extract alias oggadmin  
 Credential store altered.  
-**GGSCI (a3abfded7bc7) 2>** alter credentialstore add user gg_replicat@datatarget:1521/xe password gg_replicat alias oggrepl  
+GGSCI (a3abfded7bc7) 2> alter credentialstore add user gg_replicat@datatarget:1521/xe password gg_replicat alias oggrepl  
 Credential store altered.  
-**GGSCI (a3abfded7bc7) 2>** info credentialstore  
+GGSCI (a3abfded7bc7) 2> info credentialstore  
 Reading from credential store:  
 Default domain: OracleGoldenGate  
   Alias: oggadmin  
