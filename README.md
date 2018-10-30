@@ -92,7 +92,9 @@ CREATE TABLE trans_user.test (
 ## Credentials of sources
 
 ### Connect as oracle to GoldenGate instance:
-> su oracle 
+```console
+user@bash:~$ su oracle
+```
 
 ### Run GGSCI:
 > **GGSCI (a3abfded7bc7) 2>** add credentialstore  
