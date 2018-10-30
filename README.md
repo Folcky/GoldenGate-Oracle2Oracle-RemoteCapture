@@ -6,8 +6,12 @@ Oracle DB Source (without GG services) -> Oracle GoldenGate -> Oracle DB Target 
 # 0. Prerequisites
 
 ## DB credentials
-> sqlplus system/oracle@datasource:1521/xe  
-> sqlplus system/oracle@datatarget:1521/xe
+```console
+user@bash:~$ sqlplus system/oracle@datasource:1521/xe  
+```
+```console
+user@bash:~$ sqlplus system/oracle@datatarget:1521/xe 
+```
 
 ## Used Docker images
 * oracle/goldengate-standard:12.3.0.1.4 (Read here https://github.com/oracle/docker-images/tree/master/OracleGoldenGate)  
@@ -97,6 +101,7 @@ user@bash:~$ su oracle
 ```
 
 ### Run GGSCI:
+```console
 > **GGSCI (a3abfded7bc7) 2>** add credentialstore  
 Credential store created.  
 >  **GGSCI (a3abfded7bc7) 2>** alter credentialstore add user gg_extract@datasource:1521/xe password gg_extract alias oggadmin  
@@ -108,6 +113,7 @@ Reading from credential store:
 Default domain: OracleGoldenGate  
   Alias: oggadmin  
   Userid: gg_extract@datasource:1521/xe
+```
 
 ## Change metadata in source
 
