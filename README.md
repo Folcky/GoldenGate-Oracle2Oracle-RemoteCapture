@@ -102,7 +102,7 @@ user@bash:~$ su oracle
 
 ### Run GGSCI:
 ```console
-GGSCI (a3abfded7bc7) 2> add credentialstore  
+GGSCI (a3abfded7bc7):~$ add credentialstore  
 Credential store created.  
 GGSCI (a3abfded7bc7) 2> alter credentialstore add user gg_extract@datasource:1521/xe password gg_extract alias oggadmin  
 Credential store altered.  
