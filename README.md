@@ -95,20 +95,22 @@ CREATE TABLE trans_user.test (
 
 ## Credentials of sources
 
-### Connect as oracle to GoldenGate instance:
+### Connect as oracle to GoldenGate instance and run GGSCI:
 ```console
 user@bash:~$ su oracle
+user@bash:~$ cd /u01/app/ogg
+user@bash:~$ ggsci
 ```
 
 ### Run GGSCI:
 ```console
 GGSCI@(a3abfded7bc7):~$ add credentialstore  
 Credential store created.  
-GGSCI (a3abfded7bc7) 2> alter credentialstore add user gg_extract@datasource:1521/xe password gg_extract alias oggadmin  
+GGSCI@(a3abfded7bc7):~$ alter credentialstore add user gg_extract@datasource:1521/xe password gg_extract alias oggadmin  
 Credential store altered.  
-GGSCI (a3abfded7bc7) 2> alter credentialstore add user gg_replicat@datatarget:1521/xe password gg_replicat alias oggrepl  
+GGSCI@(a3abfded7bc7):~$ alter credentialstore add user gg_replicat@datatarget:1521/xe password gg_replicat alias oggrepl  
 Credential store altered.  
-GGSCI (a3abfded7bc7) 2> info credentialstore  
+GGSCI@(a3abfded7bc7):~$ info credentialstore  
 Reading from credential store:  
 Default domain: OracleGoldenGate  
   Alias: oggadmin  
