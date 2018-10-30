@@ -21,7 +21,7 @@ Oracle DB Source (without GG services) -> Oracle GoldenGate -> Oracle DB Target 
 # 1. Oracle DB Source Init
 
 ## Database params
-```sql
+```splus
 alter system set enable_goldengate_replication=TRUE;  
 alter database add supplemental log data;  
 alter database force logging;  
