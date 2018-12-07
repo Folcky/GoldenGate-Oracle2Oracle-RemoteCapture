@@ -215,6 +215,17 @@ select max(empno)+1, max(ename) from trans_user.test;
 commit;
 ```
 
+```console
+SQL> begin
+  2  for x in 1 .. 1000000 loop
+  3  insert into trans_user.test(empno, ename)
+  4  select max(empno)+1, max(ename) from trans_user.test;
+  5  commit;
+  6  end loop;
+  7  end;
+  8  /
+```
+
 ## Update - Source
 ```sql
 update trans_user.test
