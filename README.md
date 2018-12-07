@@ -38,8 +38,8 @@ alter system switch logfile;
 su oracle
 /u01/app/oracle/product/12.1.0/xe/bin/sqlplus /nolog
 connect / as sysdba
-SQL> Shutdown
-SQL> Startup mount
+SQL> shutdown immediate;
+SQL> Startup mount;
 SQL> Alter database archivelog;
 SQL> alter database open;
 ```
