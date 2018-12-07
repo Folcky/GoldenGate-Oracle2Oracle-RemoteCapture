@@ -32,6 +32,18 @@ alter database force logging;
 alter system switch logfile;  
 ```
 
+## Enabling ARCHIVELOG mode
+
+```console
+su oracle
+/u01/app/oracle/product/12.1.0/xe/bin/sqlplus /nolog
+connect / as sysdba
+SQL> Shutdown
+SQL> Startup mount
+SQL> Alter database archivelog;
+SQL> alter database open;
+```
+
 ## Credentials
 
 ### OGG user
