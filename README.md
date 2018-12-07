@@ -44,6 +44,14 @@ SQL> Alter database archivelog;
 SQL> alter database open;
 ```
 
+### Check archive mode
+```console
+/u01/app/oracle/product/12.1.0/xe/bin/sqlplus /nolog
+SQL> connect / as sysdba
+SQL> archive log list;
+SQL> select dest_name, status, destination from v$archive_dest;
+```
+
 ## Credentials
 
 ### OGG user
